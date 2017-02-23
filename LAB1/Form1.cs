@@ -17,12 +17,14 @@ namespace WP_Lab_1
         {
             InitializeComponent();
             button1.Enabled = false;
+            this.BackColor = System.Drawing.Color.White;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.BackColor = Color.Blue;
             textBox2.BackColor = Color.Green;
+            this.BackColor = System.Drawing.Color.Violet;
             button2.Enabled = false;
             button1.Enabled = true;
             MessageBox.Show("You changed to Custom Still!");
@@ -33,6 +35,7 @@ namespace WP_Lab_1
         {
             textBox1.BackColor = Color.White;
             textBox2.BackColor = Color.Gray;
+            this.BackColor = System.Drawing.Color.White;
             button2.Enabled = true;
             button1.Enabled = false;
             MessageBox.Show("You changed to Standard Still!");
