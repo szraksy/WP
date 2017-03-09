@@ -17,6 +17,15 @@ namespace LAB2
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Cross;
+            this.MaximumSize = new Size(300, 300);
+            this.MinimumSize = new Size(300, 300);
+        }
+
+      
+
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -35,7 +44,9 @@ namespace LAB2
 
         }
 
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
