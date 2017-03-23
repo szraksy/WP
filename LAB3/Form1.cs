@@ -62,17 +62,35 @@ namespace LAB3
             System.Drawing.Graphics grafiknesne;
             grafiknesne = this.CreateGraphics();
             Pen firca = new Pen(System.Drawing.Color.Red, 5);
-            grafiknesne.DrawLine(firca, 40,40, 150, 150);
+            grafiknesne.DrawLine(firca, 40,40, 100, 100);
             Brush firca1 = new SolidBrush(System.Drawing.Color.Red);
             Font yazi = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
-            grafiknesne.DrawString("Red Line", yazi, firca1, 5, 150);
+            grafiknesne.DrawString("Red Line", yazi, firca1, 5, 100);
       
            
             Pen firca2 = new Pen(System.Drawing.Color.Blue, 5);
-            grafiknesne.DrawLine(firca2, 100,100, 120, 120);
+            grafiknesne.DrawLine(firca2, 120,120, 170, 170);
             Brush firca3 = new SolidBrush(System.Drawing.Color.Blue);
             Font yazi2 = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
             grafiknesne.DrawString("Blue Line", yazi2, firca3, 5, 150);
+
+            Pen firca4 = new Pen(System.Drawing.Color.Green, 5);
+            grafiknesne.DrawLine(firca4, 150, 200, 250, 200);
+            Brush firca5 = new SolidBrush(System.Drawing.Color.Green);
+            Font yazi3 = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
+            grafiknesne.DrawString("Green Line", yazi3, firca5, 5, 190);
+
+            Pen firca6 = new Pen(System.Drawing.Color.HotPink, 5);
+            grafiknesne.DrawLine(firca6,170, 200, 230, 250);
+            Brush firca7 = new SolidBrush(System.Drawing.Color.HotPink);
+            Font yazi4 = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
+            grafiknesne.DrawString("Pink Line", yazi4, firca7, 5, 250);
+
+            Pen firca8 = new Pen(System.Drawing.Color.Purple, 5);
+            grafiknesne.DrawLine(firca8, 180, 230, 300, 300);
+            Brush firca9 = new SolidBrush(System.Drawing.Color.Purple);
+            Font yazi5 = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
+            grafiknesne.DrawString("Purple Line", yazi5, firca9, 5, 300);
         }
     }
 }
