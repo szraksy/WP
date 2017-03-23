@@ -22,7 +22,8 @@ namespace LAB3
 
         public void DrawLinePoint(PaintEventArgs e)
         {
-
+            Graphics g;
+            g = this.CreateGraphics();
             // Create pen.
             Pen blackPen = new Pen(Color.Black, 3);
 
@@ -36,6 +37,10 @@ namespace LAB3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label1.Visible = true;
+            Graphics g;
+            g = this.CreateGraphics();
+            g.Clear(this.BackColor);
             System.Drawing.Graphics grafiknesne;
             grafiknesne = this.CreateGraphics();
             //Rectangle
@@ -56,11 +61,16 @@ namespace LAB3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Graphics g;
+            g = this.CreateGraphics();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label1.Visible = true;
+            Graphics g;
+            g = this.CreateGraphics();
+            g.Clear(this.BackColor);
             System.Drawing.Graphics grafiknesne;
             grafiknesne = this.CreateGraphics();
             Pen firca = new Pen(System.Drawing.Color.Red, 5);
@@ -100,11 +110,12 @@ namespace LAB3
 
         private void button3_Click(object sender, EventArgs e)
         {
+            label1.Visible = true;
             Pen kalemim = new Pen(Color.Red, 2);
             Pen kalemim2 = new Pen(Color.Blue, 2);
             Graphics g;
-           
 
+            
             g = this.CreateGraphics();
             g.Clear(this.BackColor);
             Point[] p1 = { new Point(100, 60), new Point(125, 100), new Point(150, 150), new Point(200, 50) };
@@ -123,6 +134,14 @@ namespace LAB3
             f2.ShowDialog(); // Shows Form2
 
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Graphics g;
+            g = this.CreateGraphics();
+            g.Clear(this.BackColor);
+            label1.Visible = false;
         }
     }
 }
