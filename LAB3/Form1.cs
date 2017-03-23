@@ -66,7 +66,7 @@ namespace LAB3
             Brush firca1 = new SolidBrush(System.Drawing.Color.Red);
             Font yazi = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
             grafiknesne.DrawString("Red Line", yazi, firca1, 5, 150);
-
+      
            
             Pen firca2 = new Pen(System.Drawing.Color.Blue, 5);
             grafiknesne.DrawLine(firca2, 100,100, 120, 120);
