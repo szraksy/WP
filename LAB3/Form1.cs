@@ -90,7 +90,29 @@ namespace LAB3
             grafiknesne.DrawLine(firca8, 180, 230, 300, 300);
             Brush firca9 = new SolidBrush(System.Drawing.Color.Purple);
             Font yazi5 = new System.Drawing.Font("Helvetica", 12, FontStyle.Italic);
-            grafiknesne.DrawString("Purple Line", yazi5, firca9, 5, 300);
+            grafiknesne.DrawString("Purple Line", yazi5, firca9, 5, 270);
+            label1.Text = "Drawing has been completed with success! You can check those 5 lines above.";
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pen kalemim = new Pen(Color.Red, 2);
+            Pen kalemim2 = new Pen(Color.Blue, 2);
+            Graphics g;
+           
+
+            g = this.CreateGraphics();
+            g.Clear(this.BackColor);
+            Point[] p1 = { new Point(100, 60), new Point(125, 100), new Point(150, 150), new Point(200, 50) };
+            g.DrawCurve(kalemim, p1, 1);
+      
+            Point[] p2 = { new Point(100, 120), new Point(125, 200), new Point(300, 250), new Point(200, 100) };
+            g.DrawCurve(kalemim2, p2, 2);
+            label1.Text = "Drawing has been completed with success! You can check those 2 bezier curves above.";
+
+
         }
     }
 }
