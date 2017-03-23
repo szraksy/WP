@@ -16,7 +16,9 @@ namespace LAB3
         {
             InitializeComponent();
         }
-      
+
+       
+
 
         public void DrawLinePoint(PaintEventArgs e)
         {
@@ -111,6 +113,14 @@ namespace LAB3
             Point[] p2 = { new Point(100, 120), new Point(125, 200), new Point(300, 250), new Point(200, 100) };
             g.DrawCurve(kalemim2, p2, 2);
             label1.Text = "Drawing has been completed with success! You can check those 2 bezier curves above.";
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog(); // Shows Form2
 
 
         }
