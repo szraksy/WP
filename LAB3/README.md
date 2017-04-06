@@ -1,21 +1,42 @@
-Sezer Aksoy FAF-151 #lab 3
+# Windows Programming Laboratory Work #3
 
-I created a window and i put there 7 different buttons which are drawing Planes, Drawing lines, Drawing Bezier Curves,Drawing with mouse, generating bitmap, gradient and clearing all things.
+## Title
+Basics of Working with Mouse. GDI Primitives. Bezier Curve.
 
-When we click the drawing planes button then we will see there 4 different planes such rectangle, square, ellips and circle.
+## Contents
+* Mouse
+* Device context
+* GDI Primitives
+  * Line
+  * Curve
+  * Plane
+  * Bitmap image
+* Bezier curve
 
-When we click the drawing lines then we can see there 5 different lines which are different colors and wieghts.
+### Laboratory work Requirements:
+  - for _Basic Level_ (grade 5 || 6) you should be able to:
+    * Draw 5 lines of different colors and weights
+    * Draw 2 Bezier curves
+    * Draw 4 plane objects (ex. circle, square, pie, polygon...) of different colors, weights, filled and not
+    * Draw 2 different objects using mouse
+  - for _Normal Level_ (grade 7 || 8) you should be able to:
+    * Realize the tasks from _Basic Level_.
+    * Draw a custom bitmap image 
+    * Fill 2 object with gradient 
+    * Hook keyboard input. Add 2 different keyboard combinations that will change mouse ability to draw objects (ex. on Ctrl+C will draw circles, on Alt+R will continue to draw circles but of read color)
+    * Draw a Bezier curve using mouse
+  - for _Advanced Level_ (grade 9 || 10) you should be able to:
+    * Realize the tasks from _Normal Level_.
+    * Zoom in and out application working area using keyboard 
+    * Use mouse as an eraser (choose 1 option):
+      * delete objects using mouse clicking
+      * eraser of a fixed width
+      * eraser with adjustable width
+  - for _Bonus Point Tasks_ :
+    * Realize the task with mouse eraser for all 3 cases listed above. In order to choose one of them, add 3 buttons/icons or check boxes.
 
-When we click the drawing bezier Curves button then we can see 2 different bezier curves.
-
-
-When we click the draw with mouse button then a new popup windows will appeare there and we can draw lines with our mouse and also there is the another button down bellow the new window it works to do rectangle or squere by mouse.
-
-When we click the Bitmap then its generating a bitmap file and it is writing file format.
-
-When we click the Gradient then we will see the 4 different gradient planes.
-	
-When we click the clean button then all screen will be clean.
-Also When we right click then will clear all secreen too.
-
-On the white area we can draw a circle and bezier curve.
+## References
+* Programming Windows by Charlez Petzold, 5th edition:
+  * Section I, Chapter 5
+  * Section I, Chapter 7
+  * http://www.functionx.com/win32/
