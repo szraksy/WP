@@ -3,7 +3,7 @@
 
 ## Content
 
-### [Lab 1](https://github.com/TUM-FAF/WP2/blob/master/WP_LAB%231.md)
+### [Lab 1](https://github.com/szraksy/WP/blob/master/LAB3)
 Window. Window handling. Basic window’s form elements
   * Win32 API
   * GIT
@@ -12,7 +12,7 @@ Window. Window handling. Basic window’s form elements
   * Text Input
   * Text
 
-### [Lab 2](https://github.com/TUM-FAF/WP2/blob/master/WP_LAB%232.md)
+### [Lab 2](https://github.com/szraksy/WP/blob/master/LAB3)
 Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
   * The Keyboard
   * Child Window Controls
@@ -21,7 +21,7 @@ Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
   * Menus and Other Resources
   * Dialog Boxes
 
-### [Lab 3](https://github.com/TUM-FAF/WP2/blob/master/WP_LAB%233.md)
+### [Lab 3](https://github.com/szraksy/WP/blob/master/LAB3)
 Basics of Working with Mouse. GDI Primitives. Bezier Curve.
  * Mouse
  * Device context
@@ -31,3 +31,10 @@ Basics of Working with Mouse. GDI Primitives. Bezier Curve.
    * Plane
    * Bitmap image
  * Bezier curve
+ 
+ ### [Lab 4](https://github.com/szraksy/WP/blob/master/LAB4)
+Windows Timer. Animation.
+ * Animation based on Windows Timer
+ * Animation speed with mouse
+ * Flicking problem
+  
