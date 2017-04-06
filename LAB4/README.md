@@ -1,5 +1,4 @@
 # Windows Programming Laboratory Work #4
-[Initial version](https://github.com/TUM-FAF/WP/edit/master/lab%234/README.md)
 
 ## Title
 Windows Timer. Animation.
