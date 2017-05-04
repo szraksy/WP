@@ -126,3 +126,49 @@ bool Figure::collidesHorizontalLine(int y)
 	return false;
 }
 
+void Figure::increaseVelocity()
+{
+	if (abs(velocityX) < 50)
+		velocityX += (velocityX > 0) ? 2 : -2;
+	if (abs(velocityY) < 50)
+		velocityY += (velocityY > 0) ? 2 : -2;
+}
+
+void Figure::decreaseVelocity()
+{
+	if (abs(velocityX) > 1)
+		velocityX -= (velocityX > 0) ? 1 : -1;
+	if (abs(velocityY) > 1)
+		velocityY -= (velocityY > 0) ? 1 : -1;
+}
+
+void Figure::flipFigure()
+{
+	if (type == CIRCLE)
+		type = SQUARE;
+	else
+		type = CIRCLE;
+}
+
+int Figure::getType()
+{
+	return this->type;
+}
+
+int Figure::getX()
+{
+	return x;
+}
+
+int Figure::getY()
+{
+	return y;
+}
+
+void Figure::setPosition(int x, int y)
+{
+	this->x = x;
+	this->y = y;
+}
+
+
