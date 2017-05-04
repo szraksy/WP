@@ -32,7 +32,7 @@ Basics of Working with Mouse. GDI Primitives. Bezier Curve.
    * Bitmap image
  * Bezier curve
  
- ### [Lab 4](https://github.com/szraksy/WP/blob/master/LAB4)
+ ### [Lab 4](https://github.com/szraksy/WP/blob/master/LAB4_CPP)
 Windows Timer. Animation.
  * Animation based on Windows Timer
  * Animation speed with mouse
