@@ -123,58 +123,101 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // Parse the menu selections:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: Add any drawing code that uses hdc here...
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
+	PAINTSTRUCT ps;
+	HDC hdc;
+	HDC hdcMem;
+	RECT rect;
+	HBITMAP hbmMem;
+	int width;
+	int height;
+	HANDLE hOld;
+
+
+	switch (message)
+	{
+	case WM_CREATE: {
+		SetTimer(hWnd,             // handle to main window 
+			TIMER_UPDATE,            // timer identifier 
+			40,                 // 25 frames per seconds
+			(TIMERPROC)NULL);
+		for (int i = 0; i < 3; i++) {
+			createRandomFigure(hWnd);
+		}
+		break;
+	}
+	case WM_TIMER:
+		switch (wParam)
+		{
+		case TIMER_UPDATE:
+			update(hWnd);
+			break;
+		}
+		break;
+	case WM_MOUSEWHEEL: {
+		int zDelta = (short)HIWORD(wParam);
+		if (zDelta > 0)
+			changeSpeed(true);
+		else
+			changeSpeed(false);
+		break;
+	}
+	case WM_PAINT:
+	{
+		GetClientRect(hWnd, &rect);
+		width = rect.right - rect.left;
+		height = rect.bottom - rect.top;
+
+		hdc = BeginPaint(hWnd, &ps);
+
+		// Create an off-screen DC for double-buffering
+		hdcMem = CreateCompatibleDC(hdc);
+		hbmMem = CreateCompatibleBitmap(hdc, width, height);
+
+		hOld = SelectObject(hdcMem, hbmMem);
+		OnPaint(hdcMem);
+
+		// Transfer the off-screen DC to the screen
+		BitBlt(hdc, 0, 0, width, height, hdcMem, 0, 0, SRCCOPY);
+
+		// Free-up the off-screen DC
+		SelectObject(hdcMem, hOld);
+		DeleteObject(hbmMem);
+		DeleteDC(hdcMem);
+
+		EndPaint(hWnd, &ps);
+		return 0;
+
+	}
+	break;
+	case WM_LBUTTONDOWN: {
+		createRandomFigure(hWnd, LOWORD(lParam), HIWORD(lParam));
+		break;
+	}
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
 }
 
 // Message handler for about box.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
+	UNREFERENCED_PARAMETER(lParam);
+	switch (message)
+	{
+	case WM_INITDIALOG:
+		return (INT_PTR)TRUE;
 
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
+	case WM_COMMAND:
+		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
+		{
+			EndDialog(hDlg, LOWORD(wParam));
+			return (INT_PTR)TRUE;
+		}
+		break;
+	}
+	return (INT_PTR)FALSE;
 }

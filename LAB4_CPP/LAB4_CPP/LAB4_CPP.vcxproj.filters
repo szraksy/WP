@@ -30,12 +30,18 @@
     <ClInclude Include="LAB4_CPP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LAB4_CPP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
