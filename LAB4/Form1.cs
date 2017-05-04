@@ -23,6 +23,8 @@ namespace LAB4
         private const int BallHeight = 50;
         private int BallX, BallY;   // Position.
         private int BallVx, BallVy; // Velocity.
+        private int Ball2X, Ball2Y;   // Position.
+        private int Ball2Vx, Ball2Vy; // Velocity.
         private int RecX, RecY;   // Position.
         private int RecVx, RecVy; // Velocity.
         private int Rec2X, Rec2Y;   // Position.
@@ -35,12 +37,16 @@ namespace LAB4
             Random rnd = new Random();
             BallVx = rnd.Next(1, 4);
             BallVy = rnd.Next(1, 4);
+            Ball2Vx = rnd.Next(1, 6);
+            Ball2Vy = rnd.Next(1, 6);
             RecVx = rnd.Next(1, 2);
             RecVy = rnd.Next(1, 2);
             Rec2Vx = rnd.Next(1, 5);
             Rec2Vy = rnd.Next(1, 5);
             BallX = rnd.Next(0, ClientSize.Width - BallWidth);
             BallY = rnd.Next(0, ClientSize.Height - BallHeight);
+            Ball2X = rnd.Next(0, ClientSize.Width - BallWidth);
+            Ball2Y = rnd.Next(0, ClientSize.Height - BallHeight);
             RecX = rnd.Next(0, ClientSize.Width - BallWidth);
             RecY = rnd.Next(0, ClientSize.Height - BallHeight);
             Rec2X = rnd.Next(0, ClientSize.Width - BallWidth);
@@ -133,6 +139,31 @@ namespace LAB4
                 Rec2Vy = -Rec2Vy;
 
             }
+
+            //4
+            Ball2X += Ball2Vx;
+            if (Ball2X < 0)
+            {
+                Ball2Vx = -Ball2Vx;
+
+            }
+            else if (Ball2X + BallWidth > ClientSize.Width)
+            {
+                Ball2Vx = -Ball2Vx;
+
+            }
+
+            Ball2Y += Ball2Vy;
+            if (Ball2Y < 0)
+            {
+                Ball2Vy = -Ball2Vy;
+
+            }
+            else if (Ball2Y + BallHeight > ClientSize.Height)
+            {
+                Ball2Vy = -Ball2Vy;
+
+            }
             Refresh();
         }
 
@@ -149,8 +180,9 @@ namespace LAB4
             e.Graphics.DrawRectangle(Pens.Black, RecX, RecY, BallWidth, BallHeight);
             e.Graphics.FillRectangle(Brushes.Pink, Rec2X, Rec2Y, 80, 30);
             e.Graphics.DrawRectangle(Pens.Black, Rec2X, Rec2Y, 80, 30);
-            e.Graphics.FillRectangle(Brushes.Pink, Rec2X, Rec2Y, 80, 30);
-            e.Graphics.DrawRectangle(Pens.Black, Rec2X, Rec2Y, 80, 30);
+            e.Graphics.FillEllipse(Brushes.Purple, Ball2X, Ball2Y, 80, 40);
+            e.Graphics.DrawEllipse(Pens.Black, Ball2X, Ball2Y, 80, 40);
+
 
         }
     }
